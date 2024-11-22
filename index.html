@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mario Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--div: sing up/in form-->
+    <div id="modal" class="modal">
+      <div class="button-container">
+        <button id="register-button" onclick="toggleModal(event)">
+          Register
+        </button>
+        <button
+          id="login-button"
+          class="not-active"
+          onclick="toggleModal(event)"
+        >
+          Login
+        </button>
+      </div>
+
+      <form onsubmit="register(event)" id="register-form">
+        <label for="register-email">Email</label>
+        <input
+          type="email"
+          id="register-email"
+          placeholder="demo@example.com"
+          required
+        />
+
+        <label for="register-password">Password</label>
+        <input
+          type="password"
+          id="register-password"
+          placeholder="Password"
+          required
+          pattern=".{6,}"
+        />
+
+        <label for="register-username">Username</label>
+        <input id="register-username" placeholder="User" required />
+        <br />
+        <input type="submit" value="Sign Up" />
+      </form>
+
+      <form onsubmit="login(event)" id="login-form" class="hidden">
+        <label for="login-email">Email</label>
+        <input
+          type="email"
+          id="login-email"
+          placeholder="demo@example.com"
+          required
+        />
+
+        <label for="login-password">Password</label>
+        <input
+          type="password"
+          id="login-password"
+          placeholder="Password"
+          required
+          pattern=".{6,}"
+        />
+        <br />
+        <input type="submit" value="Sign In" />
+      </form>
+    </div>
+
+    <!--show username, high score, logout button-->
+
+    <div class="info-container">
+      <button id="logout-button" class="hidden" onclick="logout()">
+        Log Out
+      </button>
+      <h3 id="username"></h3>
+      <h3 id="highscore-tag" class="hidden">
+        HighScore: <span id="highscore"></span>
+      </h3>
+    </div>
+
+    <!-- Load Kaboom.js library version 0.5.0 for creating 2D games and animations -->
+    <script src="https://kaboomjs.com/lib/0.5.0/kaboom.js"></script>
+    <!-- Load Appwrite SDK to enable backend services like authentication, database, and storage -->
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

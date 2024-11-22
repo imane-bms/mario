@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+* {
+  font-family: "VT323", "monospace";
+  font-size: xx-large;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: black;
+  color: #fff;
+}
+
+.modal {
+  width: 600px;
+  margin: auto; /* equal space on left and right=> center the element */
+  margin-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #b34200;
+  padding: 10px;
+}
+
+/* a   b{} => style applied to b that is inside a*/
+form input[type="submit"] {
+  background-color: #ffd457;
+}
+
+.button-container button {
+  border: none;
+  background-color: transparent;
+  color: #e56060;
+  padding: 5px;
+}
+
+.button-container button.not-active {
+  color: #808080;
+}
+
+.hidden {
+  display: none;
+}
+
+.info-container {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  text-align: right;
+}
+h3 {
+  color: white;
+  margin: 2px;
+  padding: 3px;
+}
